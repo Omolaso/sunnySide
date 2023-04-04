@@ -1,34 +1,66 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../public/svgImages/logo.svg";
 import Hamburger from "../public/svgImages/icon-hamburger.svg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDownLong } from "@fortawesome/free-solid-svg-icons";
+import Arrow from "../public/svgImages/icon-arrow-down.svg";
 
 const Navbar = () => {
-  const handleScrollDown = () => {
-    window.scrollTo(100, 100);
+  const [fixedNav, setFixedNav] = useState(false);
+
+  const fixedScroll = () => {
+    if (
+      document.documentElement.scrollTop > 10 ||
+      document.body.scrollTop > 10
+    ) {
+      setFixedNav(true);
+    } else {
+      setFixedNav(false);
+    }
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", fixedScroll);
+
+    return () => window.removeEventListener("scroll", fixedScroll);
+  }, [fixedNav]);
+
   return (
-    <main className="relative min-h-screen flex flex-col gap-[8rem] text-white bg-[url('../public/mobileImages/image-header.jpg')] md:bg-[url('../public/desktopImages/image-header.jpg')] bg-no-repeat bg-cover bg-center w-full p-4 md:p-8">
-      <nav className="flex flex-row items-center justify-between w-full">
+    <main className="relative min-h-screen flex flex-col text-white bg-[url('../public/mobileImages/image-header.jpg')] md:bg-[url('../public/desktopImages/image-header.jpg')] bg-no-repeat bg-cover bg-center w-full p-4 ">
+      <nav
+        className={
+          fixedNav
+            ? "fixed top-0 left-0 flex flex-row bg-lightBlue items-center justify-between w-full p-4 z-50"
+            : "fixed top-0 left-0 flex flex-row items-center justify-between w-full p-4 z-50"
+        }
+      >
         <Link href="/">
           <Image src={Logo} alt="logo" />
         </Link>
 
-        <ul className="hidden md:flex flex-row items-center justify-between flex-1 max-w-[320px]">
+        <ul className="hidden md:flex flex-row items-center justify-between font-semibold flex-1 max-w-[400px]">
           <li>
-            <Link href="#">About</Link>
+            <Link href="#" className="nav-link">
+              About
+            </Link>
           </li>
           <li>
-            <Link href="#">Services</Link>
+            <Link href="#" className="nav-link">
+              Services
+            </Link>
           </li>
           <li>
-            <Link href="#">Projects</Link>
+            <Link href="#" className="nav-link">
+              Projects
+            </Link>
           </li>
           <li>
-            <button type="button">Contact</button>
+            <button
+              type="button"
+              className="text-black bg-white min-h-[40px] rounded-2xl px-4 duration-300 ease-linear hover:text-white hover:bg-blue-300"
+            >
+              Contact
+            </button>
           </li>
         </ul>
         <button type="button" className="block md:hidden">
@@ -36,15 +68,11 @@ const Navbar = () => {
         </button>
       </nav>
 
-      <section className="flex flex-col items-center justify-center text-center gap-5">
+      <section className="flex flex-col items-center justify-center text-center gap-5 mt-[150px] lg:mt-[120px]">
         <h1 className="font-bold text-[50px]">WE ARE CREATIVES</h1>
-        <button
-          type="button"
-          className="font-bold text-[30px]"
-          onClick={() => handleScrollDown()}
-        >
-          <FontAwesomeIcon icon={faArrowDownLong} beat size="2xl" />
-        </button>
+        <a href="#footer">
+          <Image src={Arrow.src} alt="arrow-down" width={50} height={50} />
+        </a>
       </section>
     </main>
   );
