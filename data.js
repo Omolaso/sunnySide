@@ -40,23 +40,23 @@ export const data = {
   ],
 
   galleryDesktop: [
-    { imageURL: `${bottlesDesktop.src}`, name: "bottlesDesktop" },
-    { imageURL: `${orangeDesktop.src}`, name: "orangeDesktop" },
-    { imageURL: `${coneDesktop.src}`, name: "coneDesktop" },
-    { imageURL: `${sugarDesktop.src}`, name: "sugarDesktop" },
+    { imageURL: `${bottlesDesktop.src}`, name: "bottlesDesktop", id: 1 },
+    { imageURL: `${orangeDesktop.src}`, name: "orangeDesktop", id: 2 },
+    { imageURL: `${coneDesktop.src}`, name: "coneDesktop", id: 3 },
+    { imageURL: `${sugarDesktop.src}`, name: "sugarDesktop", id: 4 },
   ],
 
   galleryMobile: [
-    { imageURL: `${bottlesMobile.src}`, name: "bottlesMobile" },
-    { imageURL: `${orangeMobile.src}`, name: "orangeMobile" },
-    { imageURL: `${coneMobile.src}`, name: "coneMobile" },
-    { imageURL: `${sugarMobile.src}`, name: "sugarMobile" },
+    { imageURL: `${bottlesMobile.src}`, name: "bottlesMobile", id: 5 },
+    { imageURL: `${orangeMobile.src}`, name: "orangeMobile", id: 6 },
+    { imageURL: `${coneMobile.src}`, name: "coneMobile", id: 7 },
+    { imageURL: `${sugarMobile.src}`, name: "sugarMobile", id: 8 },
   ],
 
   footerLogo: [
-    { imageURL: `${facebook.src}`, name: "facebook" },
-    { imageURL: `${instagram.src}`, name: "instagram" },
-    { imageURL: `${twitter.src}`, name: "twitter" },
-    { imageURL: `${pinterest.src}`, name: "pinterest" },
+    { imageURL: `${facebook.src}`, name: "facebook", id: 9 },
+    { imageURL: `${instagram.src}`, name: "instagram", id: 10 },
+    { imageURL: `${twitter.src}`, name: "twitter", id: 11 },
+    { imageURL: `${pinterest.src}`, name: "pinterest", id: 12 },
   ],
 };

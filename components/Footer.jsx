@@ -37,7 +37,7 @@ const Footer = () => {
           {footerLogo.map((logo) => (
             <button
               type="button"
-              key={logo.name}
+              key={logo.id}
               className="hover:scale-125 duration-300 ease-linear"
             >
               <Image

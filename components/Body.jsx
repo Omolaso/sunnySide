@@ -108,7 +108,7 @@ const Body = () => {
           {galleryDesktop.map((desktopImg) => (
             <>
               <Image
-                key={desktopImg.name}
+                key={desktopImg.id}
                 src={desktopImg.imageURL}
                 alt="features"
                 width={500}
@@ -123,7 +123,7 @@ const Body = () => {
           {galleryMobile.map((mobileImg) => (
             <>
               <Image
-                key={mobileImg.name}
+                key={mobileImg.id}
                 src={mobileImg.imageURL}
                 alt="features"
                 width={500}
