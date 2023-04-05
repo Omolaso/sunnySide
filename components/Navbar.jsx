@@ -64,18 +64,18 @@ const Navbar = () => {
           </li>
         </ul>
         <button type="button" className="block md:hidden">
-          <Image src={Hamburger} alt="Hamburger" />
+          <Image src={Hamburger} alt="Hamburger" width="auto" height="auto" />
         </button>
       </nav>
 
       <section className="flex flex-col items-center justify-center text-center gap-5 mt-[150px] lg:mt-[120px]">
         <h1 className="font-bold text-[50px]">WE ARE CREATIVES</h1>
-        <a href="#footer">
-          <Image src={Arrow.src} alt="arrow-down" width={50} height={50} />
+        <a href="#testimonies">
+          <Image src={Arrow} alt="arrow-down" width="auto" height="auto" />
         </a>
       </section>
     </main>
   );
 };
 
-export default Navbar;
+export default Navbar; //HAMBURGER TOGGLE

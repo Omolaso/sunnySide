@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Navbar, Body } from "../../components";
+import { Navbar, Body, Footer } from "../../components";
 import logo from "../../public/svgImages/logo.svg";
 
 const LandingPage = () => {
@@ -11,6 +11,7 @@ const LandingPage = () => {
       </Head>
       <Navbar />
       <Body />
+      <Footer />
     </>
   );
 };

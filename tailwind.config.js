@@ -14,6 +14,8 @@ module.exports = {
         black: "#000",
         white: "#ffffff",
         lightBlue: "#3EBFFF",
+        footerBg: "#92D2C4",
+        footerText: "#2C7566",
       },
     },
   },

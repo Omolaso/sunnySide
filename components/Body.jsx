@@ -4,7 +4,7 @@ import standout from "../public/desktopImages/image-stand-out.jpg";
 import { data } from "../data";
 
 const Body = () => {
-  const { people } = data;
+  const { people, galleryDesktop, galleryMobile } = data;
 
   return (
     <>
@@ -69,7 +69,10 @@ const Body = () => {
         </section>
       </main>
 
-      <section className="flex items-center justify-center min-h-screen p-6">
+      <section
+        id="testimonies"
+        className="flex items-center justify-center min-h-screen p-6"
+      >
         <div className="flex flex-col gap-8 items-center text-center">
           <h1 className="text-[25px] font-bold text-gray-600">
             CLIENT TESTIMONIES
@@ -100,7 +103,37 @@ const Body = () => {
         </div>
       </section>
 
-      <section className="flex flex-row flex-wrap items-center w-full"></section>
+      <section className="w-full">
+        <div className="hidden lg:grid grid-cols-4 w-full">
+          {galleryDesktop.map((desktopImg) => (
+            <>
+              <Image
+                key={desktopImg.name}
+                src={desktopImg.imageURL}
+                alt="features"
+                width={500}
+                height={500}
+                className="w-full"
+              />
+            </>
+          ))}
+        </div>
+        {/* MOBILE GALLERY */}
+        <div className="lg:hidden grid grid-cols-2 w-full">
+          {galleryMobile.map((mobileImg) => (
+            <>
+              <Image
+                key={mobileImg.name}
+                src={mobileImg.imageURL}
+                alt="features"
+                width={500}
+                height={500}
+                className="w-full"
+              />
+            </>
+          ))}
+        </div>
+      </section>
     </>
   );
 };
