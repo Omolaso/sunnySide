@@ -22,6 +22,7 @@ export const data = {
         "We build our trust in sunnyside and they delivered, making sure our needs were met and deadlines were also hit.",
       imageURL: `${emily.src}`,
       role: "Marketing Director",
+      id: 15,
     },
     {
       name: "Thomas S.",
@@ -29,6 +30,7 @@ export const data = {
         " Sunnyside's enthuisiasm couples with there keen interest in our brand's success made it a satisfying and enjoyable experience.",
       imageURL: `${thomas.src}`,
       role: "Chief Operating Officer",
+      id: 14,
     },
     {
       name: "Jennie F.",
@@ -36,6 +38,7 @@ export const data = {
         " Incredible end result! Our sales increased over 400% when we worked with sunnyside. Highly recommended!",
       imageURL: `${jennie.src}`,
       role: "Business Owner",
+      id: 13,
     },
   ],
 

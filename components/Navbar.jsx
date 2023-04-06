@@ -9,7 +9,7 @@ const Navbar = () => {
   const [fixedNav, setFixedNav] = useState(false);
   const [sidebar, setSidebar] = useState(false);
 
-  const fixedScroll = () => {
+  const fixedNavbarScroll = () => {
     if (
       document.documentElement.scrollTop > 10 ||
       document.body.scrollTop > 10
@@ -23,12 +23,20 @@ const Navbar = () => {
   const toggleSidebar = () => {
     setSidebar((prevSidebar) => !prevSidebar);
   };
+  const removeSidebar = () => {
+    setSidebar(false);
+  };
 
   useEffect(() => {
-    window.addEventListener("scroll", fixedScroll);
+    window.addEventListener("scroll", fixedNavbarScroll);
 
-    return () => window.removeEventListener("scroll", fixedScroll);
-  }, [fixedNav]);
+    sidebar
+      ? window.addEventListener("resize", removeSidebar) ||
+        window.addEventListener("scroll", removeSidebar)
+      : null;
+
+    return () => window.removeEventListener("scroll", fixedNavbarScroll);
+  }, [fixedNav, sidebar]);
 
   return (
     <main className="relative min-h-screen flex flex-col text-white bg-[url('../public/mobileImages/image-header.jpg')] md:bg-[url('../public/desktopImages/image-header.jpg')] bg-no-repeat bg-cover bg-center w-full p-4 ">
@@ -81,29 +89,42 @@ const Navbar = () => {
       <section
         className={
           sidebar
-            ? "flex w-full left-0 px-4 items-center fixed top-[50px] min-h-[200px] text-footerText font-medium mt-8 scale-100 duration-300"
-            : "flex w-full left-0 px-4 items-center fixed top-[50px] min-h-[200px] text-footerText font-medium mt-8 scale-0 duration-300"
+            ? "flex md:hidden w-full left-0 px-4 items-center fixed top-[50px] min-h-[200px] text-footerText font-medium mt-8 scale-100 duration-300"
+            : "flex md:hidden w-full left-0 px-4 items-center fixed top-[50px] min-h-[200px] text-footerText font-medium mt-8 scale-0 duration-300"
         }
       >
         <ul className="flex flex-col items-center justify-between p-4 bg-white w-full min-h-[200px]">
           <li>
-            <Link href="#" className="nav-link">
+            <Link
+              href="#"
+              className="nav-link"
+              onClick={() => setSidebar(false)}
+            >
               About
             </Link>
           </li>
           <li>
-            <Link href="#" className="nav-link">
+            <Link
+              href="#"
+              className="nav-link"
+              onClick={() => setSidebar(false)}
+            >
               Services
             </Link>
           </li>
           <li>
-            <Link href="#" className="nav-link">
+            <Link
+              href="#"
+              className="nav-link"
+              onClick={() => setSidebar(false)}
+            >
               Projects
             </Link>
           </li>
           <li>
             <button
               type="button"
+              onClick={() => setSidebar(false)}
               className="text-black bg-yellow min-h-[50px] rounded-3xl px-4 duration-300 ease-linear hover:text-white hover:bg-blue-300 min-w-[100px] max-w-[150px] w-full"
             >
               Contact
