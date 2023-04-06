@@ -89,11 +89,12 @@ const Navbar = () => {
       <section
         className={
           sidebar
-            ? "flex md:hidden w-full left-0 px-4 items-center fixed top-[50px] min-h-[200px] text-footerText font-medium mt-8 scale-100 duration-300"
-            : "flex md:hidden w-full left-0 px-4 items-center fixed top-[50px] min-h-[200px] text-footerText font-medium mt-8 scale-0 duration-300"
+            ? "flex md:hidden w-full left-0 px-5 items-center fixed top-[50px] min-h-[200px] text-footerText font-medium mt-8 scale-100 duration-300"
+            : "flex md:hidden w-full left-0 px-5 items-center fixed top-[50px] min-h-[200px] text-footerText font-medium mt-8 scale-0 duration-300"
         }
       >
-        <ul className="flex flex-col items-center justify-between p-4 bg-white w-full min-h-[200px]">
+        <ul className="relative flex flex-col items-center justify-between p-4 bg-white w-full min-h-[200px]">
+          <div className="border-b-[20px] border-b-white border-l-[20px] border-l-[transparent] w-0 h-0 fixed right-[20px] top-[-18px]" />
           <li>
             <Link
               href="#"
